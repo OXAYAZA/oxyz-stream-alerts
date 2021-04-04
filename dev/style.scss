@@ -1,0 +1,93 @@
+// Reset
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Base
+html {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+body {
+  background: #313233;
+  color: white;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.section {
+  padding: 10vh 0;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+// Form
+.alert-form-out {
+  display: block;
+  padding: .5rem 1rem;
+  min-height: 2.2rem;
+  border-radius: .5rem;
+  font-family: monospace;
+  background: #212223;
+  color: white;
+}
+
+* + .alert-form-out {
+  margin-top: 1rem;
+}
+
+* + .alert-form {
+  margin-top: 1.5rem;
+}
+
+// Input
+.input {
+  display: block;
+  width: 100%;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1rem;
+  line-height: inherit;
+  box-shadow: none;
+  outline: none;
+}
+
+* + .input {
+  margin-top: 1rem;
+}
+
+// Button
+.btn {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1rem;
+  line-height: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: background-color .2s;
+  background-color: #212223;
+  color: white;
+
+  &:hover {
+    background-color: black;
+  }
+}
+
+* + .btn {
+  margin-top: 1rem;
+}

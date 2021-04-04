@@ -1,0 +1,27 @@
+{
+  "name": "oxyz-stream-alerts",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OXAYAZA/oxyz-stream-alerts.git"
+  },
+  "keywords": [
+    "stream",
+    "alert"
+  ],
+  "author": "OXAYAZA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OXAYAZA/oxyz-stream-alerts/issues"
+  },
+  "homepage": "https://github.com/OXAYAZA/oxyz-stream-alerts#readme",
+  "devDependencies": {
+    "connect-multiparty": "^2.2.0",
+    "oxyz-express": "1.0.3"
+  }
+}

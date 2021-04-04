@@ -1,0 +1,9 @@
+# WebStorm project files
+/.idea
+
+# Installable modules
+/node_modules
+
+# Trash
+*.db
+*.map

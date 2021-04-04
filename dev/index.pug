@@ -1,0 +1,26 @@
+doctype html
+html( lang='en')
+    head
+        title Test
+        meta( charset='utf-8' )
+        meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1.0' )
+        meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+        link( rel='icon', href='favicon.ico', type='image/x-icon' )
+        link( rel='stylesheet', href='style.css' )
+        script( src='alert-form.js' )
+        script( src='script.js' )
+
+    body
+        main.page
+            section.section
+                .container
+                    h1.h1 Sample Alert Request Form
+                    form.alert-form( method='post' action='alrreq' )
+                        input.input( type='text' name='name' placeholder='name')
+                        textarea.input( name='text' )
+                        button.btn( type='submit' ) Send
+
+            section.section
+                .container
+                    h1.h1 Result
+                    pre.alert-form-out empty
