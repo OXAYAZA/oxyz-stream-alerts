@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/OXAYAZA/oxyz-stream-alerts#readme",
   "devDependencies": {
-    "connect-multiparty": "^2.2.0",
-    "oxyz-express": "1.0.3"
+    "connect-multiparty": "2.2.0",
+    "oxyz-express": "1.0.3",
+    "server-sent-events": "1.0.1"
   }
 }

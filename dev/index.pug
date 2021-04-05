@@ -1,14 +1,32 @@
 doctype html
 html( lang='en')
     head
-        title Test
+        title Alert Request
         meta( charset='utf-8' )
         meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1.0' )
         meta( http-equiv='X-UA-Compatible', content='IE=edge' )
         link( rel='icon', href='favicon.ico', type='image/x-icon' )
         link( rel='stylesheet', href='style.css' )
         script( src='alert-form.js' )
-        script( src='script.js' )
+        script.
+            document.addEventListener( 'DOMContentLoaded', function () {
+              // Alert Form
+              document.querySelectorAll( '.alert-form' ).forEach( ( node ) => {
+                let out = document.querySelector( '.output' );
+
+                new AlertForm({
+                  node: node,
+                  onResponse: ( res ) => {
+                    try {
+                      out.innerText = JSON.stringify( JSON.parse( res ), null, 2 );
+                    } catch ( error ) {
+                      out.innerText = 'json parse error';
+                    }
+                  }
+                });
+              });
+            });
+
 
     body
         main.page
@@ -23,4 +41,6 @@ html( lang='en')
             section.section
                 .container
                     h1.h1 Result
-                    pre.alert-form-out empty
+                    pre.output empty
+                    .block
+                        a.link( href='output.html' ) Output page here

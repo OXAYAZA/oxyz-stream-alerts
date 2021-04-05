@@ -34,8 +34,34 @@ body {
   max-width: 800px;
 }
 
+// Block
+.block {
+  display: block;
+}
+
+* + .block {
+  margin-top: .5rem;
+}
+
+// Link
+.link {
+  transition: color .2s;
+  text-decoration: underline;
+  cursor: pointer;
+  color: orange;
+
+  &:hover {
+    color: yellow;
+  }
+}
+
 // Form
-.alert-form-out {
+* + .alert-form {
+  margin-top: 1.5rem;
+}
+
+// Output
+.output {
   display: block;
   padding: .5rem 1rem;
   min-height: 2.2rem;
@@ -45,12 +71,8 @@ body {
   color: white;
 }
 
-* + .alert-form-out {
+.output {
   margin-top: 1rem;
-}
-
-* + .alert-form {
-  margin-top: 1.5rem;
 }
 
 // Input
