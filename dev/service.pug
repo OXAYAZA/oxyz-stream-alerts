@@ -1,0 +1,54 @@
+doctype html
+html( lang='en')
+	head
+		title Alert Request
+		meta( charset='utf-8' )
+		meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1.0' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+		link( rel='icon', href='favicon.ico', type='image/x-icon' )
+		link( rel='stylesheet', href='style.css' )
+		script( type='module' src='script.js' )
+
+
+	body
+		main.page
+			section.section
+				.container
+					.row
+						.col
+							h2.h2 Alert Request Form
+							.block
+								a.link( href='output.html' ) Output page here
+							form.alert-form( method='post' action='alrreq' )
+								input.input( type='text' name='name' placeholder='name')
+								input.input( type='number' name='time' placeholder='time')
+								textarea.input( name='text' )
+								button.btn( type='submit' ) Send
+								button.btn(
+									type='button'
+									data-sample!={
+										name: 'OXAYAZA',
+										time: 5000,
+										text: 'Advenas acipensers'
+									}
+								) Sample 1
+								button.btn(
+									type='button'
+									data-sample!={ name: 'atom', time: 2500, text: 'Щастя здоровля, йопта!' }
+								) Sample 2
+								button.btn(
+									type='button'
+									data-sample!={ name: 'Lola', text: 'Говно' }
+								) Sample 3
+								button.btn(
+									type='button'
+									data-sample!={ name: 'Empty' }
+								) Sample 4
+						.col
+							h2.h2 Queue
+							pre.output-stats empty
+
+			section.section
+				.container
+					h1.h1 Alert Output
+					iframe.frame( src='output.html' )

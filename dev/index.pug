@@ -1,46 +1,32 @@
 doctype html
 html( lang='en')
-    head
-        title Alert Request
-        meta( charset='utf-8' )
-        meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1.0' )
-        meta( http-equiv='X-UA-Compatible', content='IE=edge' )
-        link( rel='icon', href='favicon.ico', type='image/x-icon' )
-        link( rel='stylesheet', href='style.css' )
-        script( src='alert-form.js' )
-        script.
-            document.addEventListener( 'DOMContentLoaded', function () {
-              // Alert Form
-              document.querySelectorAll( '.alert-form' ).forEach( ( node ) => {
-                let out = document.querySelector( '.output' );
-
-                new AlertForm({
-                  node: node,
-                  onResponse: ( res ) => {
-                    try {
-                      out.innerText = JSON.stringify( JSON.parse( res ), null, 2 );
-                    } catch ( error ) {
-                      out.innerText = 'json parse error';
-                    }
-                  }
-                });
-              });
-            });
+	head
+		title Alert Request
+		meta( charset='utf-8' )
+		meta( name='viewport', content='width=device-width, height=device-height, initial-scale=1.0' )
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+		link( rel='icon', href='favicon.ico', type='image/x-icon' )
+		link( rel='stylesheet', href='style.css' )
+		script( type='module' src='script.js' )
 
 
-    body
-        main.page
-            section.section
-                .container
-                    h1.h1 Sample Alert Request Form
-                    form.alert-form( method='post' action='alrreq' )
-                        input.input( type='text' name='name' placeholder='name')
-                        textarea.input( name='text' )
-                        button.btn( type='submit' ) Send
+		body
+			main.page
+				section.section
+					.container
+						.row
+							.col
+								.box
+									h2.h2 Уведомление
+									form.alert-form( method='post' action='alrreq' )
+										input.input( type='text' name='name' placeholder='Имя')
+										textarea.input( name='text' )
+										button.btn( type='submit' ) Отправить
+							.col
+								.box
+									h2.h2 Предпросмотр
 
-            section.section
-                .container
-                    h1.h1 Result
-                    pre.output empty
-                    .block
-                        a.link( href='output.html' ) Output page here
+				section.section
+					.container
+						.box
+							h2.h2 Очередь
