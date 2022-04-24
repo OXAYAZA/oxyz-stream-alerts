@@ -109,6 +109,8 @@ AlertForm.prototype.submitHandler = function ( event ) {
 		this.inputs.forEach( ( node ) => {
 			let
 				name = node.getAttribute( 'name' ),
+				type = node.getAttribute( 'type' ),
+				checked = node.checked,
 				value = node.value,
 				valid = node.validator instanceof Function ? node.validator() : true;
 
@@ -118,7 +120,11 @@ AlertForm.prototype.submitHandler = function ( event ) {
 				});
 			} else if ( valid ) {
 				if ( name ) {
-					this.data.append( name, value );
+					if ( ( type === 'checkbox' || type === 'radio' ) ) {
+						if ( checked ) this.data.append( name, value );
+					} else {
+						this.data.append( name, value );
+					}
 				}
 			} else {
 				correct = false;

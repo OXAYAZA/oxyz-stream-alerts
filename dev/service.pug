@@ -18,32 +18,42 @@ html( lang='en')
 						.col
 							h2.h2 Alert Request Form
 							.block
-								a.link( href='output.html' ) Output page here
+								a.link( href='output.html' ) Alert page
+								!= ' '
+								a.link( href='output.html' ) User page
 							form.alert-form( method='post' action='alrreq' )
 								input.input( type='text' name='name' placeholder='name')
 								input.input( type='number' name='time' placeholder='time')
 								textarea.input( name='text' )
-								button.btn( type='submit' ) Send
-								button.btn(
-									type='button'
-									data-sample!={
-										name: 'OXAYAZA',
-										time: 5000,
-										text: 'Advenas acipensers'
-									}
-								) Sample 1
-								button.btn(
-									type='button'
-									data-sample!={ name: 'atom', time: 2500, text: 'Щастя здоровля, йопта!' }
-								) Sample 2
-								button.btn(
-									type='button'
-									data-sample!={ name: 'Lola', text: 'Говно' }
-								) Sample 3
-								button.btn(
-									type='button'
-									data-sample!={ name: 'Empty' }
-								) Sample 4
+								.form-group.form-list.inline-group( data-imglist )
+									input.flag-img( type='radio' name='img' value='assets/img/cat.gif' style={ 'background-image': 'url(assets/img/cat.gif)' })
+								.form-group.form-list.inline-group( data-soundlist )
+									.form-sound
+										input.sound-flag( type='radio' name='sound' value='assets/sound/arcade-magic-notification.wav' )
+										audio.sound-media( src='assets/sound/arcade-magic-notification.wav' )
+										button.sound-btn.btn( type='button' ) Play
+								.form-group.inline-group
+									button.btn( type='submit' ) Send
+									button.btn(
+										type='button'
+										data-sample!={
+											name: 'OXAYAZA',
+											time: 5000,
+											text: 'Advenas acipensers'
+										}
+									) Sample 1
+									button.btn(
+										type='button'
+										data-sample!={ name: 'atom', time: 2500, text: 'Щастя здоровля, йопта!' }
+									) Sample 2
+									button.btn(
+										type='button'
+										data-sample!={ name: 'Lola', text: 'Говно' }
+									) Sample 3
+									button.btn(
+										type='button'
+										data-sample!={ name: 'Empty' }
+									) Sample 4
 						.col
 							h2.h2 Queue
 							pre.output-stats empty

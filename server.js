@@ -2,7 +2,8 @@ const
 	server    = require( 'oxyz-express' ),
 	multipart = require( 'connect-multiparty' ),
 	sse       = require( 'server-sent-events' ),
-	Emitter   = require( 'events' );
+	Emitter   = require( 'events' ),
+	fs        = require('fs');
 
 const
 	emitter = new Emitter(),
@@ -91,9 +92,19 @@ server({
 			emitter.addListener( 'alert', respond );
 
 			req.on( 'close', () => {
-				console.log( '[unsub stats]', client );
+				console.log( '[unsub events]', client );
 				emitter.removeListener( 'alert', respond );
 			});
+		});
+
+		app.get( '/imglist', function ( req, res ) {
+			let list = fs.readdirSync( './dev/assets/img' );
+			res.send( list );
+		});
+
+		app.get( '/soundlist', function ( req, res ) {
+			let list = fs.readdirSync( './dev/assets/sound' );
+			res.send( list );
 		});
 	}
 });
