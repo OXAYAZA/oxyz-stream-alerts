@@ -102,8 +102,39 @@ body {
 // Output
 .output {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.output-img {
+  width: 15rem;
+  object-fit: contain;
+}
+
+.output-name {
+  font-size: 2rem;
+  line-height: 1.2;
+  text-shadow: 0 0 1rem black;
+}
+
+.output-text {
+  font-size: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 0 1rem black;
+}
+
+.output-audio {
+  display: none;
+}
+
+* + .output-name {
+  margin-top: 1rem;
+}
+
+* + .output-text {
+  margin-top: .5rem;
 }
 
 // Stats

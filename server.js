@@ -7,7 +7,7 @@ const
 
 const
 	emitter = new Emitter(),
-	defDelay = 1000,
+	defDelay = 3000,
 	defDuration = 2000,
 	queue = [];
 
